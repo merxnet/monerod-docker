@@ -1,0 +1,12 @@
+[Unit]
+Description=Monero daemon
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --rm --name %n -v /home/bitmonero/:/root/.bitmonero:rw --net=host merxnet/monerod --non-interactive
+ExecStop=/usr/bin/docker stop %n
+
+[Install]
+WantedBy=multi-user.target
