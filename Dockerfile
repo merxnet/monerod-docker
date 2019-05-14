@@ -2,7 +2,7 @@ ARG ALPINE_VERSION=3.8
 
 FROM frolvlad/alpine-glibc:alpine-${ALPINE_VERSION}
 
-ENV MONERO_VERSION=v0.13.0.4
+ENV MONERO_VERSION=v0.14.0.0
 
 RUN apk update \
     && apk add --no-cache tar wget udev \
